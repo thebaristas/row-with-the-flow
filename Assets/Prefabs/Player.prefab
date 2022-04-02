@@ -217,8 +217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 30
   rotationSpeed: 100
-  swimInterval: 0.5
-  swimDuration: 0.3
+  moveInterval: 0.5
+  moveDuration: 0.3
 --- !u!50 &488319265590900258
 Rigidbody2D:
   serializedVersion: 4

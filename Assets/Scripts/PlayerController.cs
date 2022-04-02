@@ -6,12 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public float strength = 30f;
     public float rotationSpeed = 100f;
-    public float swimInterval = 0.5f;
-    public float swimDuration = 0.3f;
+    public float moveInterval = 0.5f;
+    public float moveDuration = 0.3f;
+    private float lastTimeMoved = 0f;
     private Rigidbody2D body;
     private float forwardRatio = 0f;
     private float rotation = 0f;
-    private float swimCooldown = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,17 +28,16 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        float now = Time.fixedTime;
         body.angularVelocity = -1 * rotation * rotationSpeed;
-        if (swimCooldown <= 0) {
+        if (forwardRatio > 0 && now >= lastTimeMoved + moveInterval) {
+            // start moving
+            body.AddRelativeForce(new Vector2(0, forwardRatio * strength));
+            lastTimeMoved = now;
+        }
+        else if (now <= lastTimeMoved + moveDuration) {
+            // continue moving
             body.AddRelativeForce(new Vector2(0, forwardRatio * strength));
         }
-        if (swimCooldown < - swimDuration) {
-            ResetSwimCooldown();
-        }
-        swimCooldown -= Time.fixedDeltaTime;
-    }
-
-    void ResetSwimCooldown() {
-        swimCooldown = swimInterval;
     }
 }
