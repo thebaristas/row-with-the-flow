@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,13 +11,11 @@ public class PlayerController : MonoBehaviour
     private float forwardRatio = 0f;
     private float rotation = 0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         forwardRatio = Input.GetAxis("Vertical");
