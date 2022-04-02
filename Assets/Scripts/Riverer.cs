@@ -4,33 +4,29 @@ using UnityEngine;
 
 public class Riverer : MonoBehaviour
 {
-    [SerializeField]
-    Vector2 riverSpeed = new Vector2(0, 1);
-    [SerializeField]
-    float dragCoefficient = 1;
-    [SerializeField]
-    float linearDrag = 0;
-    [SerializeField]
-    float angularDrag = 0.5f;
-    [SerializeField]
-    Vector2 initialSpeed;
 
-    private Rigidbody2D rb;
+    public Vector2 initialVelocity;
+
+    private Rigidbody2D body;
+
+    [SerializeField]
+    private Collider2D riverCollider;
+
+    public Collider2D GetRiverCollider2D() { return riverCollider; }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = initialSpeed;
-        rb.drag = linearDrag;
-        rb.angularDrag = angularDrag;
+        body = GetComponent<Rigidbody2D>();
+        body.velocity = initialVelocity;
+        body.drag = RiverSettings.Instance.linearDrag;
+        body.angularDrag = RiverSettings.Instance.angularDrag;
+        body.gravityScale = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 f = - dragCoefficient * (rb.velocity + riverSpeed);
-        Debug.Log(f);
-        rb.AddForce(f);
+        body.AddForce(- RiverSettings.Instance.dragCoefficient * (body.velocity - RiverSettings.Instance.riverSpeed));
     }
 }
