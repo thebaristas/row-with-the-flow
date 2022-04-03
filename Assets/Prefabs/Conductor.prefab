@@ -50,7 +50,7 @@ MonoBehaviour:
     bpm: 120
     offset: 0
     clip: {fileID: 8300000, guid: d5b634fb604ea4b1b999e028a8946e1b, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     pitch: 1
   songPosition: 0
