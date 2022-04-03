@@ -822,21 +822,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 70586080546587418}
     m_Modifications:
-    - target: {fileID: 4722667027377107833, guid: c5e88e7dbb1f74df29ae407ce8ad2331, type: 3}
-      propertyPath: gridHalfWidth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4722667027377107833, guid: c5e88e7dbb1f74df29ae407ce8ad2331, type: 3}
-      propertyPath: gridHalfHeight
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7641514391972362380, guid: c5e88e7dbb1f74df29ae407ce8ad2331, type: 3}
       propertyPath: m_Name
       value: DiscoFloor
-      objectReference: {fileID: 0}
-    - target: {fileID: 8297114423261758877, guid: c5e88e7dbb1f74df29ae407ce8ad2331, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9186502889700390261, guid: c5e88e7dbb1f74df29ae407ce8ad2331, type: 3}
       propertyPath: m_RootOrder
