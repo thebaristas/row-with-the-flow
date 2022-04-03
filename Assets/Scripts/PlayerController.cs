@@ -6,14 +6,18 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 100f;
     public float moveInterval = 0.5f;
     public float moveDuration = 0.3f;
+    public GameObject boat;
 
     private float lastTimeMoved = 0f;
     private Rigidbody2D body;
+    private Animator animator;
     private float forwardRatio = 0f;
     private float rotation = 0f;
     private float cannotMoveTimer = 0;
     private float moveUntilTimer = 0;
     private float inputCooldown = 0;
+
+    private const string ROW_ANIMATION = "Row";
 
     public enum PlayerControllerMode {
         FREEFORM,
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        animator = boat.GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
 
         inputCooldown = Conductor.instance.secondPerBeat / 2f;
@@ -41,6 +46,7 @@ public class PlayerController : MonoBehaviour
             case PlayerControllerMode.BEAT:
                 if (Input.GetButtonDown("Jump")) {
                     if (Time.time >= cannotMoveTimer) {
+                        animator.Play(ROW_ANIMATION);
                         float acc = Conductor.instance.GetAccuracy();
                         forwardRatio = acc;
                         RythmUI.Instance.ShowMessage("Accuracy: " + acc);

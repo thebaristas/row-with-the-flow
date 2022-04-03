@@ -157,6 +157,7 @@ MonoBehaviour:
   rotationSpeed: 100
   moveInterval: 0.5
   moveDuration: 0.3
+  boat: {fileID: 5686756196735722439}
   playerControllerMode: 1
 --- !u!50 &488319265590900258
 Rigidbody2D:
