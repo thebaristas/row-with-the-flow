@@ -82,7 +82,7 @@ public class ItemSpawner : MonoBehaviour
             category.Update(Time.deltaTime);
             if (category.ShouldSpawn()) {
                 var item = category.GetRandomItem();
-                spawnQueue.Enqueue(new ItemToSpawn(item, new Vector2(0, 10), 360 * UnityEngine.Random.value));
+                spawnQueue.Enqueue(new ItemToSpawn(item, transform.position, 360 * UnityEngine.Random.value));
                 category.ResetTimer();
             }
         }
