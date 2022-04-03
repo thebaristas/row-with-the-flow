@@ -5,16 +5,18 @@ using UnityEngine.Tilemaps;
 
 public class DiscoFloor : MonoBehaviour{
 
-    public float changeFrequencySeconds;
+    // public float changeFrequencySeconds;
     public int gridHalfWidth;
     public int gridHalfHeight;
     public Tilemap tilemap;
     public Sprite tileSprite;
     public Color[] colours;
 
+    private bool changed;
+
     void Start() {
         InitializeFloor();
-        InvokeRepeating("RandomizeFloor", 0, changeFrequencySeconds);
+        // InvokeRepeating("RandomizeFloor", 0, changeFrequencySeconds);
     }
 
     void InitializeFloor() {
@@ -40,6 +42,13 @@ public class DiscoFloor : MonoBehaviour{
                 tilemap.SetColor(position, colour);
             }
         }
+    }
+
+    void Update() {
+        // A _very_ hacky way to randomize the floor every beat; refactor me
+        bool shouldChange = Conductor.instance.GetDistanceToNextBeat() < 0.1;
+        if (shouldChange && !changed) RandomizeFloor();
+        changed = shouldChange;
     }
 
 }
