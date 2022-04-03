@@ -9,6 +9,10 @@ public class RythmUI : MonoBehaviour
     public Text accuracyDisplay;
     public AnimationCurve curve;
 
+    public DebugGauge debugNextDistanceGauge;
+    public DebugGauge debugClosestDistanceGauge;
+    public DebugGauge debugAccuracyGauge;
+
     private Vector2 initialSize;
 
     private static RythmUI _instance;
@@ -38,6 +42,12 @@ public class RythmUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Debug
+        debugNextDistanceGauge.value =  Conductor.instance.GetDistanceToNextBeat();
+        debugClosestDistanceGauge.value = Conductor.instance.GetDistanceToClosestBeat();
+        debugAccuracyGauge.value = Conductor.instance.GetAccuracy();
+        // End debug
+
         float d = 1f + 0.4f * curve.Evaluate(Conductor.instance.GetDistanceToNextBeat());
         main.rectTransform.localScale = new Vector2(d, d);
     }
