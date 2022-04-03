@@ -92,12 +92,15 @@ public class ItemSpawner : MonoBehaviour
             Riverer instance = spawnQueue.Peek().Instantiate();
             Collider2D[] colliders = new Collider2D[1];
             int overlapCount = instance.GetRiverCollider2D().OverlapCollider(new ContactFilter2D().NoFilter(), colliders);
-            if (overlapCount > 0) {
-                Destroy(instance.gameObject);
-            } else {
-                spawnQueue.Dequeue();
+            foreach (Collider2D collider in colliders) {
+                if (collider.gameObject.GetComponent<Riverer>() != null) {
+                    Debug.LogWarning("Overlapping objects");
+                    Destroy(instance.gameObject);
+                    return;
+                }
             }
-            instance.initialVelocity = RiverSettings.Instance.riverSpeed;
+            spawnQueue.Dequeue();
+            instance.initialVelocity = River.Instance.riverSpeed;
         }
     }
 }

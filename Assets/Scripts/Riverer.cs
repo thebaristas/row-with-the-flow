@@ -19,14 +19,8 @@ public class Riverer : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         body.velocity = initialVelocity;
-        body.drag = RiverSettings.Instance.linearDrag;
-        body.angularDrag = RiverSettings.Instance.angularDrag;
+        body.drag = River.Instance.linearDrag;
+        body.angularDrag = River.Instance.angularDrag;
         body.gravityScale = 0;
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        body.AddForce(- RiverSettings.Instance.dragCoefficient * (body.velocity - RiverSettings.Instance.riverSpeed));
     }
 }
