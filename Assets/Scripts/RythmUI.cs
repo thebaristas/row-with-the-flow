@@ -24,7 +24,7 @@ public class RythmUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float d = 1f + 0.2f * curve.Evaluate(GetDistanceToNextBeat());
+        float d = 1f + 0.4f * curve.Evaluate(GetDistanceToNextBeat());
         main.rectTransform.localScale = new Vector2(d, d);
     }
 }

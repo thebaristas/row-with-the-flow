@@ -25,7 +25,7 @@ public class Riverer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         body.AddForce(- RiverSettings.Instance.dragCoefficient * (body.velocity - RiverSettings.Instance.riverSpeed));
     }
