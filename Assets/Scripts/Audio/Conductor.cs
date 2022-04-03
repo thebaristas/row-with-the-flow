@@ -4,6 +4,8 @@ public class Conductor : MonoBehaviour
 {
     public static Conductor instance;
     public Song song;
+    public float bpm { get { return song.bpm; }}
+    public float secondPerBeat { get { return song.SecPerBeat; }}
 
     //Current song position, in seconds
     public float songPosition;
@@ -13,6 +15,7 @@ public class Conductor : MonoBehaviour
 
     //How many seconds have passed since the song started
     public float dspSongTime;
+    public AnimationCurve animationCurve;
 
 
 
@@ -53,7 +56,11 @@ public class Conductor : MonoBehaviour
         return Mathf.Ceil(songPositionInBeats) - songPositionInBeats;
     }
 
-    public float GetAccuracy() {
+    public float GetDistanceToClosestBeat() {
         return songPositionInBeats - Mathf.Round(songPositionInBeats);
+    }
+
+    public float GetAccuracy() {
+        return animationCurve.Evaluate(GetDistanceToClosestBeat() + 0.5f);
     }
 }

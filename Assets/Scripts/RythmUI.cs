@@ -11,10 +11,6 @@ public class RythmUI : MonoBehaviour
 
     private Vector2 initialSize;
 
-    private float GetDistanceToNextBeat() {
-        return Mathf.Repeat(Time.time * BPM / 60f, 1f);
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +20,7 @@ public class RythmUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float d = 1f + 0.4f * curve.Evaluate(GetDistanceToNextBeat());
+        float d = 1f + 0.4f * curve.Evaluate(Conductor.instance.GetDistanceToNextBeat());
         main.rectTransform.localScale = new Vector2(d, d);
     }
 }

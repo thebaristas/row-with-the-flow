@@ -18,12 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public PlayerControllerMode playerControllerMode = PlayerControllerMode.BEAT;
 
-    private float GetAccuracy() {
-        float acc = Mathf.Repeat(Time.time * 120f / 60f, 1f);
-        if (acc > 0.5) return acc - 1;
-        return acc;
-    }
-
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -31,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private float cannotMoveTimer = 0;
     private float moveUntilTimer = 0;
-    public float inputCooldown = (60f / 120f) / 2f; // half beat (60 / BPM) / 2
+    public float inputCooldown = Conductor.instance.secondPerBeat / 2f;
 
     public AnimationCurve accuracyRewardCurve;
 
@@ -47,8 +41,7 @@ public class PlayerController : MonoBehaviour
             case PlayerControllerMode.BEAT:
                 if (Input.GetButtonDown("Jump")) {
                     if (Time.time >= cannotMoveTimer) {
-                        float acc = 1f - 2f * Mathf.Abs(GetAccuracy());
-                        acc = accuracyRewardCurve.Evaluate(Mathf.Clamp01(acc));
+                        float acc = Conductor.instance.GetAccuracy();
                         Debug.Log("Accuracy: " + acc);
                         forwardRatio = acc;
                         cannotMoveTimer = Time.time + inputCooldown;

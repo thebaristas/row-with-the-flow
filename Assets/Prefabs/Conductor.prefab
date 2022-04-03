@@ -56,6 +56,39 @@ MonoBehaviour:
   songPosition: 0
   songPositionInBeats: 0
   dspSongTime: 0
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.29999998
+      value: 0
+      inSlope: -0.026307346
+      outSlope: -0.026307346
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.448257
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.0000061
+      inSlope: -0.00000023841858
+      outSlope: -0.00000023841858
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.30888122
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   musicSource: {fileID: 0}
 --- !u!82 &-4719481835431593853
 AudioSource:
