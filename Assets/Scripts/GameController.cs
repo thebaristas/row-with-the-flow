@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         gameState = GameState.Playing;
+        Conductor.instance.Play();
     }
 
     public void GameOver() {
