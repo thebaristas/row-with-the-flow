@@ -52,12 +52,23 @@ class ItemToSpawn {
 public class ItemSpawner : MonoBehaviour
 {
     public SpawnCategory[] spawnCategories;
+    public Transform spawnTopLeft;
+    public Transform spawnBottomRight;
 
     private static ItemSpawner _instance;
 
     private Queue<ItemToSpawn> spawnQueue;
 
     public static ItemSpawner Instance { get { return _instance; } }
+
+    private Vector2 PickRandomSpawnPoint() {
+        var p = new Vector2(
+            UnityEngine.Random.Range(spawnTopLeft.position.x, spawnBottomRight.position.x),
+            UnityEngine.Random.Range(spawnTopLeft.position.y, spawnBottomRight.position.y)
+        );
+        Debug.Log(p.x);
+        return p;
+    }
 
     private void Awake()
     {
@@ -82,7 +93,7 @@ public class ItemSpawner : MonoBehaviour
             category.Update(Time.deltaTime);
             if (category.ShouldSpawn()) {
                 var item = category.GetRandomItem();
-                spawnQueue.Enqueue(new ItemToSpawn(item, transform.position, 360 * UnityEngine.Random.value));
+                spawnQueue.Enqueue(new ItemToSpawn(item, PickRandomSpawnPoint(), 360 * UnityEngine.Random.value));
                 category.ResetTimer();
             }
         }
@@ -94,7 +105,7 @@ public class ItemSpawner : MonoBehaviour
             int overlapCount = instance.GetRiverCollider2D().OverlapCollider(new ContactFilter2D().NoFilter(), colliders);
             foreach (Collider2D collider in colliders) {
                 if (collider.gameObject.GetComponent<Riverer>() != null) {
-                    Debug.LogWarning("Overlapping objects");
+                    Debug.Log("Overlapping objects");
                     Destroy(instance.gameObject);
                     return;
                 }

@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
                     if (Time.time >= cannotMoveTimer) {
                         float acc = Conductor.instance.GetAccuracy();
                         forwardRatio = acc;
-                        RythmUI.Instance.ShowMessage("Accurracy: " + acc);
+                        RythmUI.Instance.ShowMessage("Accuracy: " + acc);
                         cannotMoveTimer = Time.time + inputCooldown;
                         moveUntilTimer = Time.time + inputCooldown;
                     } else {
