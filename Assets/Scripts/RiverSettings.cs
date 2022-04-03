@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RiverSettings : MonoBehaviour
 {
-    public Vector2 riverSpeed = new Vector2(0, 1);
+    public Vector2 riverSpeed = new Vector2(0, -1);
     public float dragCoefficient = 1;
     public float linearDrag = 0;
     public float angularDrag = 0.5f;
