@@ -590,6 +590,8 @@ MonoBehaviour:
     prefabs:
     - {fileID: 1895146229893865331, guid: b42c257a7e4ae2f419fe2ae2d0cd2e0e, type: 3}
     - {fileID: 1945123214839677250, guid: 5781e09adea348f488eae7f73364bab4, type: 3}
+  spawnTopLeft: {fileID: 0}
+  spawnBottomRight: {fileID: 0}
 --- !u!4 &1675614847
 Transform:
   m_ObjectHideFlags: 0
@@ -657,20 +659,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4434444260532111711, guid: c63b94a77f7014ada9483a1c263c8cae, type: 3}
-      propertyPath: animationCurve.m_Curve.Array.data[0].time
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: song.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d5b634fb604ea4b1b999e028a8946e1b, type: 3}
     - target: {fileID: 4434444260532111711, guid: c63b94a77f7014ada9483a1c263c8cae, type: 3}
-      propertyPath: animationCurve.m_Curve.Array.data[2].time
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434444260532111711, guid: c63b94a77f7014ada9483a1c263c8cae, type: 3}
-      propertyPath: animationCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434444260532111711, guid: c63b94a77f7014ada9483a1c263c8cae, type: 3}
-      propertyPath: animationCurve.m_Curve.Array.data[1].outSlope
-      value: 0
+      propertyPath: song.name
+      value: song1
       objectReference: {fileID: 0}
     - target: {fileID: 6562135507721810266, guid: c63b94a77f7014ada9483a1c263c8cae, type: 3}
       propertyPath: m_Name
