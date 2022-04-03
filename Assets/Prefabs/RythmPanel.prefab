@@ -168,3 +168,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BPM: 120
   main: {fileID: 8588435172781699266}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.01209182
+      outSlope: -0.01209182
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.2
+      value: 0
+      inSlope: 0.0017922581
+      outSlope: 0.0067121377
+      tangentMode: 1
+      weightedMode: 1
+      inWeight: 1
+      outWeight: 0.5951491
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: 0.002628377
+      outSlope: 0.002628377
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.048971172
+    - serializedVersion: 3
+      time: 0.8
+      value: 0
+      inSlope: 0.011219118
+      outSlope: 0.0015054333
+      tangentMode: 1
+      weightedMode: 2
+      inWeight: 0.05244096
+      outWeight: 0.95849967
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.012087821
+      outSlope: 0.012087821
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
