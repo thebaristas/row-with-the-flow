@@ -22,7 +22,7 @@ public class Shrinker : MonoBehaviour
     public void Run(Vector3 endPosition, ShrinkDoneCallback callback, AnimationCurve rotationSpeed, float targetSize = 0.1f) {
         // initialize stuff in OnEnable
         startScale = transform.localScale;
-        startPosition = transform.localPosition;
+        startPosition = transform.position;
         t = 0;
         this.targetPosition = endPosition;
         this.callback = callback;
@@ -41,7 +41,7 @@ public class Shrinker : MonoBehaviour
             transform.localScale = newScale;
 
             Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, t);
-            transform.localPosition = newPosition;
+            transform.position = newPosition;
 
             transform.Rotate(Vector3.forward, rotationSpeed.Evaluate(t) * 360 * Time.deltaTime);
 
