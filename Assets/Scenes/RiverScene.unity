@@ -431,6 +431,10 @@ PrefabInstance:
       value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].spawnRate
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
       propertyPath: spawnCategories.Array.data[1].prefabs.Array.data[2]
       value: 
       objectReference: {fileID: 1895146229893865331, guid: b42c257a7e4ae2f419fe2ae2d0cd2e0e, type: 3}
