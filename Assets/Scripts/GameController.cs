@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 enum GameState {
         Playing,
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        gameState = GameState.Playing;
+        ResetGame();
         Conductor.instance.Play();
     }
 
@@ -52,6 +53,15 @@ public class GameController : MonoBehaviour
 
     public void Restart() {
         ResetGame();
+    }
+
+    public void OpenMainMenuScene() {
+        Conductor.instance.Stop();
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 
     private void Stop() {
