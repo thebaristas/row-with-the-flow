@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song:
     name: song1
-    bpm: 120
-    offset: 0.25
+    bpm: 125
+    offset: 0.1
     clip: {fileID: 8300000, guid: d5b634fb604ea4b1b999e028a8946e1b, type: 3}
     loop: 1
     volume: 1
@@ -60,7 +60,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.1
+      time: 0.3
       value: 0
       inSlope: -0.026307346
       outSlope: -0.026307346
@@ -69,32 +69,14 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.448257
     - serializedVersion: 3
-      time: 0.39999998
-      value: 0.84999794
+      time: 0.5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.27544054
       outWeight: 0.070832975
-    - serializedVersion: 3
-      time: 0.9
-      value: 1.000004
-      inSlope: -0.09138763
-      outSlope: -0.09138763
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.3044815
-    - serializedVersion: 3
-      time: 0.59999996
-      value: 0.8499969
-      inSlope: -3.2324944
-      outSlope: -3.2324944
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.27943203
-      outWeight: 0.26328975
     - serializedVersion: 3
       time: 0.7
       value: 0
