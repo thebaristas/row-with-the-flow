@@ -1,6 +1,6 @@
 # row-with-the-flow
 
-A 2D game created by @thebaristas for the 2022 [Ludum Dare 50](https://ldjam.com/) game jam based on the theme "Delay the Inevitable".
+A 2D game created by @thebaristas for the 2022 [Ludum Dare 50](https://ldjam.com/events/ludum-dare/50/row-with-the-flow) game jam based on the theme "Delay the Inevitable".
 
 ![Cover](Docs/cover.png)
 
