@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WaterfallController : MonoBehaviour
 {
+    public AnimationCurve shrinkerRotationController;
     private BoxCollider2D bc;
 
     void Start()
@@ -15,7 +16,7 @@ public class WaterfallController : MonoBehaviour
         shrinker.Run(endPosition, () =>
         {
             DeleteObject(gameObject);
-        });
+        }, shrinkerRotationController);
         if (gameObject.GetComponent<PlayerController>() != null)
         {
             gameObject.GetComponent<PlayerController>().enabled = false;

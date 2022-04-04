@@ -570,6 +570,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1091194134968180172, guid: 7b19e206fa8964634af710f08b92c59d, type: 3}
+      propertyPath: playerControllerMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5421310468942345964, guid: 7b19e206fa8964634af710f08b92c59d, type: 3}
       propertyPath: m_RootOrder
       value: 1

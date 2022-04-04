@@ -8,6 +8,7 @@ public class Shrinker : MonoBehaviour
     // Time it takes in seconds to shrink from starting scale to target scale.
     public float ShrinkDuration = 1f;
 
+    private AnimationCurve rotationSpeed;
     private float targetSize = 0.1f;
     // The starting scale
     Vector3 startScale;
@@ -18,7 +19,7 @@ public class Shrinker : MonoBehaviour
     float t = 0;
     private bool isRunning = false;
 
-    public void Run(Vector3 endPosition, ShrinkDoneCallback callback, float targetSize = 0.1f) {
+    public void Run(Vector3 endPosition, ShrinkDoneCallback callback, AnimationCurve rotationSpeed, float targetSize = 0.1f) {
         // initialize stuff in OnEnable
         startScale = transform.localScale;
         startPosition = transform.localPosition;
@@ -26,6 +27,7 @@ public class Shrinker : MonoBehaviour
         this.targetPosition = endPosition;
         this.callback = callback;
         this.targetSize = targetSize;
+        this.rotationSpeed = rotationSpeed;
         isRunning = true;
     }
 
@@ -41,7 +43,7 @@ public class Shrinker : MonoBehaviour
             Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, t);
             transform.localPosition = newPosition;
 
-            transform.Rotate(Vector3.forward, 2);
+            transform.Rotate(Vector3.forward, rotationSpeed.Evaluate(t) * 360 * Time.deltaTime);
 
             // We're done! We can disable this component to save resources.
             if (t > 1) {
