@@ -23,7 +23,13 @@ public class Conductor : MonoBehaviour
     public AudioSource musicSource;
 
     void Awake() {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        } else {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
     }
 
     void Start() {
