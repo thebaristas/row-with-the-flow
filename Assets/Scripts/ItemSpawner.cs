@@ -8,6 +8,7 @@ public class SpawnCategory {
     public string name;
     [Tooltip("Number of items to spawn per second")]
     public float spawnRate;
+    public float spawnRateIncrease; // set 0 to keep same difficulty
     public Riverer[] prefabs;
 
     private float spawnTimer;
@@ -21,7 +22,7 @@ public class SpawnCategory {
     }
 
     public bool ShouldSpawn() {
-        return spawnTimer > 1f / spawnRate;
+        return spawnTimer > 1f / (spawnRate * (1 + spawnRateIncrease * spawnTimer));
     }
 
     public void ResetTimer() {
