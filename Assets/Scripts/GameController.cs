@@ -11,6 +11,12 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     GameState gameState;
 
+    public GameObject playerPrefab;
+    public Transform playerSpawnPoint;
+
+    public GameObject gameOverUI;
+    public GameObject rythmUI;
+
     void Awake() {
         instance = this;
     }
@@ -26,7 +32,23 @@ public class GameController : MonoBehaviour
             gameState = GameState.GameOver;
             Debug.Log("Game Over");
             Stop();
+            gameOverUI.SetActive(true);
+            rythmUI.SetActive(false);
         }
+    }
+
+    void ResetGame() {
+        gameOverUI.SetActive(false);
+        rythmUI.SetActive(true);
+        Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
+        ItemSpawner.Instance.Reset();
+        Time.timeScale = 1;
+        Conductor.instance.Play();
+        gameState = GameState.Playing;
+    }
+
+    public void Restart() {
+        ResetGame();
     }
 
     private void Stop() {

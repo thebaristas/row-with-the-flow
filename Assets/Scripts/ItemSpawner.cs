@@ -44,8 +44,8 @@ class ItemToSpawn {
         this.rotation = rotation;
     }
 
-    public Riverer Instantiate() {
-        return UnityEngine.Object.Instantiate(item, position, Quaternion.Euler(0, 0, rotation));
+    public Riverer Instantiate(Transform parent) {
+        return UnityEngine.Object.Instantiate(item, position, Quaternion.Euler(0, 0, rotation), parent);
     }
 }
 
@@ -80,6 +80,13 @@ public class ItemSpawner : MonoBehaviour
         }
     }
 
+    public void Reset() {
+        var objects = GetComponentsInChildren<Riverer>();
+        foreach(var o in objects) {
+            Destroy(o.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,7 +107,7 @@ public class ItemSpawner : MonoBehaviour
 
         // Attempt to spawn top item from queue
         if (spawnQueue.Count > 0) {
-            Riverer instance = spawnQueue.Peek().Instantiate();
+            Riverer instance = spawnQueue.Peek().Instantiate(transform);
             Collider2D[] colliders = new Collider2D[1];
             int overlapCount = instance.GetRiverCollider2D().OverlapCollider(new ContactFilter2D().NoFilter(), colliders);
             foreach (Collider2D collider in colliders) {

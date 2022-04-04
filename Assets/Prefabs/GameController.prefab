@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798898fe245ad4b899bcbc613981d31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 5734708908119774059, guid: 7b19e206fa8964634af710f08b92c59d, type: 3}
+  playerSpawnPoint: {fileID: 0}
+  gameOverUI: {fileID: 0}
+  rythmUI: {fileID: 0}
