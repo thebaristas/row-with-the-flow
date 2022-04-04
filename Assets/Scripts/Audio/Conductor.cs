@@ -73,4 +73,9 @@ public class Conductor : MonoBehaviour
     public float GetAccuracy() {
         return animationCurve.Evaluate(Mathf.Repeat(GetDistanceToClosestBeat() + 0.5f - userOffset, 1f));
     }
+
+    public string GetPlayTime() {
+        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(songPosition);
+        return timeSpan.ToString(@"mm\:ss");
+    }
 }
