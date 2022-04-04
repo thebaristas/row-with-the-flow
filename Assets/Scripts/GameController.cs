@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 enum GameState {
         Playing,
@@ -15,6 +16,7 @@ public class GameController : MonoBehaviour
     public Transform playerSpawnPoint;
 
     public GameObject gameOverUI;
+    public Text TimerText;
     public GameObject rythmUI;
 
     void Awake() {
@@ -33,6 +35,7 @@ public class GameController : MonoBehaviour
             Debug.Log("Game Over");
             Stop();
             gameOverUI.SetActive(true);
+            TimerText.text = "Play time: " + Conductor.instance.GetPlayTime();
             rythmUI.SetActive(false);
         }
     }

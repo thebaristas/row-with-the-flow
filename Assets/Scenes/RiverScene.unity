@@ -135,6 +135,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8588435172453151785}
     - target: {fileID: 457928863229573708, guid: 9a0fa78a062a2421cb6deff60be5d7a9, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 1269773992}
+    - target: {fileID: 457928863229573708, guid: 9a0fa78a062a2421cb6deff60be5d7a9, type: 3}
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 2034691774}
@@ -488,6 +492,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+--- !u!114 &1269773992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2074290257142285456, guid: 20b68d6fb36cc294c923e57b4bcda818, type: 3}
+  m_PrefabInstance: {fileID: 2034691772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1307232221 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8588435173339608053, guid: 7b6ec0272947a2f47ab6953bd9da4fc4, type: 3}
@@ -690,10 +705,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1399014786}
     m_Modifications:
+    - target: {fileID: 2958604976744857288, guid: 20b68d6fb36cc294c923e57b4bcda818, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398081812066049944, guid: 20b68d6fb36cc294c923e57b4bcda818, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 8398081812066049945, guid: 20b68d6fb36cc294c923e57b4bcda818, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 775610144}
+    - target: {fileID: 8398081812487436298, guid: 20b68d6fb36cc294c923e57b4bcda818, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8398081812653448812, guid: 20b68d6fb36cc294c923e57b4bcda818, type: 3}
       propertyPath: m_Name
       value: GameOverPanel
