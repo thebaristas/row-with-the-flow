@@ -51,10 +51,12 @@ public class PlayerController : MonoBehaviour
                         forwardRatio = acc;
                         if (acc > 0.9) {
                             RythmUI.Instance.ShowMessage("Perfect!", Color.green);
+                        } else if (acc > 0.7) {
+                            RythmUI.Instance.ShowMessage("Good", Color.yellow);
                         } else if (acc > 0.5) {
-                            RythmUI.Instance.ShowMessage("Not bad", Color.white);
+                            RythmUI.Instance.ShowMessage("Ok", Color.white);
                         } else {
-                            RythmUI.Instance.ShowMessage("Off beat", Color.red);
+                            RythmUI.Instance.ShowMessage("Missed", Color.red);
                         }
                         cannotMoveTimer = Time.time + inputCooldown;
                         moveUntilTimer = Time.time + inputCooldown;
