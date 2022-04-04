@@ -47,7 +47,7 @@ public class DiscoFloor : MonoBehaviour{
     void Update() {
         // A _very_ hacky way to randomize the floor every beat; refactor me
         bool shouldChange = Conductor.instance.GetDistanceToNextBeat() < 0.1;
-        if (shouldChange && !changed) RandomizeFloor();
+        if (shouldChange && !changed && Time.timeScale > 0) RandomizeFloor();
         changed = shouldChange;
     }
 
