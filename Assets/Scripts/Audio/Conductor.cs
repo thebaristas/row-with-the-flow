@@ -76,16 +76,7 @@ public class Conductor : MonoBehaviour
     }
 
     public string GetPlayTime() {
-        int hours = (int)Mathf.Floor(dspSongTime / 3600);
-        int min = (int)Mathf.Floor(dspSongTime / 60);
-        int sec = (int)Mathf.Floor(dspSongTime - (hours * 3600) - min * 60);
-
-        if (hours > 0) {
-            return string.Format("{0:D2}h {1:D2}m {2:D2}s", hours, min, sec);
-        } else if (min > 0) {
-            return string.Format("{0:D2}m {1:D2}s", min, sec);
-        } else {
-            return string.Format("{0:D2}s", sec);
-        }
+        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(songPosition);
+        return timeSpan.ToString(@"mm\:ss");
     }
 }
