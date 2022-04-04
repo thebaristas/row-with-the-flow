@@ -399,6 +399,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].name
+      value: Decorations
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].spawnRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[0].prefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].prefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].prefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4741022655331464145, guid: 7645e929607b5436eb58cc2757833457, type: 3}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].prefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6394077703855588945, guid: 760608094588b404299bfae5197c5a64, type: 3}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].prefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1895146229893865331, guid: b42c257a7e4ae2f419fe2ae2d0cd2e0e, type: 3}
+    - target: {fileID: 6198545902005910964, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
+      propertyPath: spawnCategories.Array.data[1].prefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1945123214839677250, guid: 5781e09adea348f488eae7f73364bab4, type: 3}
     - target: {fileID: 6198545902005910965, guid: 3701e2fdd695ccb42afb8597f5aa6c75, type: 3}
       propertyPath: m_RootOrder
       value: 7

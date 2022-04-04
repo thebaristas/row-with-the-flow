@@ -114,6 +114,9 @@ MonoBehaviour:
     prefabs:
     - {fileID: 1895146229893865331, guid: b42c257a7e4ae2f419fe2ae2d0cd2e0e, type: 3}
     - {fileID: 1945123214839677250, guid: 5781e09adea348f488eae7f73364bab4, type: 3}
+  - name: Decorations
+    spawnRate: 0.1
+    prefabs:
     - {fileID: 4741022655331464145, guid: 7645e929607b5436eb58cc2757833457, type: 3}
     - {fileID: 6394077703855588945, guid: 760608094588b404299bfae5197c5a64, type: 3}
   spawnTopLeft: {fileID: 7709960309554018787}
