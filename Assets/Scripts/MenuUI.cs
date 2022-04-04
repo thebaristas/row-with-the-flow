@@ -24,6 +24,10 @@ public class MenuUI : MonoBehaviour
         ControlesMenu.SetActive(true);
     }
 
+    public void OpenCalibrationScene() {
+        SceneManager.LoadScene(2);
+    }
+
     public void StartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

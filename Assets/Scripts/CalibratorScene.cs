@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CalibratorScene : MonoBehaviour
 {
@@ -21,13 +22,20 @@ public class CalibratorScene : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump")) {
             calibrator.Observe(Conductor.instance.GetDistanceToClosestBeat());
-            offsetText.text = "Offset: " + calibrator.CalculateOffset().ToString();
-            Debug.Log(calibrator.CalculateOffset());
+            var offset = calibrator.CalculateOffset();
+            offsetText.text = "Offset: " + (1000f * offset * Conductor.instance.secondPerBeat).ToString() + " ms";
+            Conductor.instance.userOffset = offset;
         }
     }
 
     public void Reset() {
         calibrator.Reset();
-        offsetText.text = "-";
+        Conductor.instance.userOffset = 0;
+        offsetText.text = "Offset: 0 ms";
+    }
+
+    public void Back() {
+        Conductor.instance.Stop();
+        SceneManager.LoadScene(0);
     }
 }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RiverScene.unity
     guid: c8d12c600abf1cf4faba9f98dc7b1816
+  - enabled: 1
+    path: Assets/Scenes/CalibratorScene.unity
+    guid: dd4f6ac5f3dfcb94a9a932c415fb23f4
   m_configObjects: {}

@@ -16,8 +16,7 @@ public class Conductor : MonoBehaviour
     //How many seconds have passed since the song started
     public float dspSongTime;
     public AnimationCurve animationCurve;
-
-
+    public float userOffset = 0;
 
     //an AudioSource attached to this GameObject that will play the music.
     public AudioSource musicSource;
@@ -72,6 +71,6 @@ public class Conductor : MonoBehaviour
     }
 
     public float GetAccuracy() {
-        return animationCurve.Evaluate(GetDistanceToClosestBeat() + 0.5f);
+        return animationCurve.Evaluate(Mathf.Repeat(GetDistanceToClosestBeat() + 0.5f - userOffset, 1f));
     }
 }
