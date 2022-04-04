@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         animator = boat.GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
 
-        inputCooldown = Conductor.instance.secondPerBeat / 2f;
+        inputCooldown = Conductor.instance.secondPerBeat / 1.5f;
     }
 
     void Update()
@@ -49,11 +49,17 @@ public class PlayerController : MonoBehaviour
                         animator.Play(ROW_ANIMATION);
                         float acc = Conductor.instance.GetAccuracy();
                         forwardRatio = acc;
-                        RythmUI.Instance.ShowMessage("Accuracy: " + acc);
+                        if (acc > 0.9) {
+                            RythmUI.Instance.ShowMessage("Perfect!", Color.green);
+                        } else if (acc > 0.5) {
+                            RythmUI.Instance.ShowMessage("Not bad", Color.white);
+                        } else {
+                            RythmUI.Instance.ShowMessage("Off beat", Color.red);
+                        }
                         cannotMoveTimer = Time.time + inputCooldown;
                         moveUntilTimer = Time.time + inputCooldown;
                     } else {
-                        RythmUI.Instance.ShowMessage("Too soon");
+                        // RythmUI.Instance.ShowMessage("Too soon");
                     }
                 }
                 break;
