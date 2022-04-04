@@ -48,9 +48,9 @@ public class Conductor : MonoBehaviour
         musicSource.Play();
     }
 
-    public void Pause()
+    public void Stop()
     {
-        musicSource.Pause();
+        musicSource.Stop();
     }
 
 

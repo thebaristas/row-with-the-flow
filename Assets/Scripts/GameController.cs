@@ -53,6 +53,6 @@ public class GameController : MonoBehaviour
 
     private void Stop() {
         Time.timeScale = 0;
-        Conductor.instance.Pause();
+        Conductor.instance.Stop();
     }
 }
